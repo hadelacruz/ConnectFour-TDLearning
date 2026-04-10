@@ -57,8 +57,6 @@ def run_benchmark(beam_k: int = 3,
     _print_separator("═")
 
     # ── Ejecutar los tres algoritmos ─────────────────────────────────────────
-    print("\n  Ejecutando algoritmos…")
-
     bt  = _bench_backtracking()
     bs  = _bench_beam(k=beam_k)
     ls  = _bench_local(max_iterations=icm_max_iter, seed=icm_seed)
@@ -133,24 +131,5 @@ def run_benchmark(beam_k: int = 3,
          satisfechas) nunca decrece entre iteraciones, lo que garantiza
          convergencia pero NO optimalidad global.
 
-  2. VELOCIDAD
-     • Backtracking : {bt['time']:.6f} s  (complejidad exponencial O(b^n))
-     • Beam Search  : {bs['time']:.6f} s  (complejidad lineal  O(K·n·b))
-     • Local Search : {ls['time']:.6f} s  (complejidad lineal  O(iter·n·b))
-
-     Para este problema pequeño (n=8 variables, b=3 valores) la diferencia
-     de tiempo es mínima porque el espacio de búsqueda es manejable.
-     En problemas más grandes (n≫8), la brecha exponencial/lineal se hace
-     dramáticamente evidente: Backtracking escalaría mal mientras que
-     Beam Search e ICM permanecerían rápidos.
-
-  3. TRADEOFF EFICIENCIA vs. EXACTITUD (diapositiva 9 del PDF)
-     • Solo Backtracking GARANTIZA encontrar la asignación óptima (Weight=1).
-     • Beam Search y ICM sacrifican exactitud por velocidad.
-     • En aplicaciones reales de despliegue de microservicios donde el
-       número de servicios y restricciones crece, los algoritmos aproximados
-       son preferibles por su escalabilidad lineal, aceptando el riesgo
-       de soluciones sub-óptimas.
 """
     print(conclusiones)
-    _print_separator("═")

@@ -20,7 +20,7 @@ def print_header(title: str) -> None:
 
 # ── Task 2.1 — Backtracking Search ───────────────────────────────────────────
 def task_2_1() -> None:
-    print_header("TASK 2.1 — BACKTRACKING SEARCH")
+    print_header("BACKTRACKING SEARCH")
     print("\n  Descripción:")
     print("  Algoritmo exacto con Forward Checking (Lookahead).")
     print("  Garantiza encontrar una asignación válida (Weight = 1).")
@@ -32,7 +32,7 @@ def task_2_1() -> None:
 
 # ── Task 2.2 — Beam Search ───────────────────────────────────────────────────
 def task_2_2() -> None:
-    print_header("TASK 2.2 — BEAM SEARCH")
+    print_header("BEAM SEARCH")
     print("\n  Descripción:")
     print(f"  Algoritmo aproximado con K = {BEAM_K} candidatos simultáneos.")
     print("  Heurística de prune: menor número de restricciones violadas.")
@@ -46,7 +46,7 @@ def task_2_2() -> None:
 
 # ── Task 2.3 — Local Search (ICM) ────────────────────────────────────────────
 def task_2_3() -> None:
-    print_header("TASK 2.3 — LOCAL SEARCH (ICM)")
+    print_header("LOCAL SEARCH (ICM)")
     print("\n  Descripción:")
     print("  Búsqueda local mediante Modos Condicionales Iterados.")
     print("  Inicia con asignación aleatoria y mejora iterativamente.")
@@ -58,7 +58,7 @@ def task_2_3() -> None:
 
 # ── Task 2.4 — Benchmarking y Conclusiones ───────────────────────────────────
 def task_2_4() -> None:
-    print_header("TASK 2.4 — BENCHMARKING Y CONCLUSIONES")
+    print_header("BENCHMARKING Y CONCLUSIONES")
     run_benchmark(
         beam_k       = BEAM_K,
         icm_max_iter = ICM_MAX_ITER,
@@ -70,7 +70,6 @@ def task_2_4() -> None:
 def main() -> None:
     print("\n" + "=" * 60)
     print("  CSP: DESPLIEGUE DE MICROSERVICIOS")
-    print("  Inteligencia Artificial — UVG 2026")
     print("=" * 60)
     print("\n  Problema:")
     print("  • 8 microservicios (M1–M8) → 3 servidores (S1, S2, S3)")
@@ -81,10 +80,6 @@ def main() -> None:
     task_2_2()
     task_2_3()
     task_2_4()
-
-    print("\n" + "=" * 60)
-    print("  FIN DE LA EJECUCIÓN")
-    print("=" * 60 + "\n")
 
 
 if __name__ == "__main__":
